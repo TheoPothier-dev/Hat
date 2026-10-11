@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Palette HAT, par ordre d'importance :
+   paper #FFFBFF · ink #161032 · flame #F34213 · lake #136F63
+   Règle de contraste : sur flame, le texte est toujours ink (jamais blanc). */
+@theme {
+  --color-paper: #fffbff;
+  --color-ink: #161032;
+  --color-flame: #f34213;
+  --color-lake: #136f63;
+
+  --color-muted: #4a4566;
+  --color-line: #e6dfea;
+  --color-line-strong: #d8d0df;
+  --color-mist: #f6eff6;
+  --color-lake-mist: #e4f0ee;
+  --color-lake-deep: #0e5249;
+  --color-flame-mist: #fde7e0;
+  --color-flame-deep: #8a2a0c;
+  --color-flame-date: #c2340c;
+  --color-on-ink-muted: #d9d4e8;
+
+  --font-display: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --font-sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-lake);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
